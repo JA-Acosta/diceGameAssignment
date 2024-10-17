@@ -4,8 +4,8 @@
 import java.util.Random;
 
 public class Die {
-    private int sides, // The number of sides the die has.
-                faceUp; // The current side that's face up.
+    private int sides; // The number of sides the die has.
+    protected  int faceUp; // The current side that's face up.
 
     private static Random roll;
 

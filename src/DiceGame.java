@@ -16,22 +16,41 @@ public class DiceGame {
         pair = new Die[]{ new Die(size), new Die(size) };
     }
 
-    // Play the next game - Will reroll and will then return the
-    public void nextRound() {
+    // Plays the next round by re-rolling each die then updates the
+    // scoreboard. Also Identifies the winter of the round
+    // Return:
+    //  - int winner: denotes the player that won this round. If neither
+    //  player won will return a -1
+    public int nextRound() {
+        int winner = -1; // Sentinel
         // Rolls both dice
-
-        // Checks which of the
-
-        // Updates the score
-
-
-
+        if (pair[0].reRoll() <  pair[1].reRoll()) {
+            score[1]++;
+            winner = 1;
+        } else if (pair[0].reRoll() >  pair[1].reRoll()) {
+            score[0]++;
+            winner = 0;
+        } // ignores ties.
+        return winner;
     }
 
-
-    // Update the score
-
     // Getters:
+
+    // Checks what way the players die is facing.
+    // Param:
+    //  - int player: player whose die we want to check.
+    // Return:
+    //  - int faceOfDie: the face the die landed on.
+    public int getFaceUp(int player) {
+        return pair[player].faceUp;
+    }
+
+    // Gets the scoreboard for both players.
+    // Return:
+    //  - int[] score: The scoreboard with both players information.
+    public int[] getPlayerScore() {
+        return score;
+    }
 
     // Gets the current score for one of the players in the game.
     // Param:
