@@ -32,6 +32,8 @@ public class Die {
     // Returns:
     //  - int faceUp: Represents the face up side of the die.
     public int reRoll() {
-        return roll.nextInt(sides) + 1;
+        // prevents stale data for getFaceUp
+        faceUp = roll.nextInt(sides) + 1;
+        return faceUp;
     }
 }

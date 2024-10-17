@@ -22,12 +22,12 @@ public class DiceGame {
     //  - int winner: denotes the player that won this round. If neither
     //  player won will return a -1
     public int nextRound() {
-        int winner = -1; // Sentinel
+        int winner = -1; // Sentinel represents tie.
         // Rolls both dice
         if (pair[0].reRoll() <  pair[1].reRoll()) {
             score[1]++;
             winner = 1;
-        } else if (pair[0].reRoll() >  pair[1].reRoll()) {
+        } else if (pair[0].getFaceUp() >  pair[1].getFaceUp()) {
             score[0]++;
             winner = 0;
         } // ignores ties.
