@@ -10,10 +10,19 @@ public class Main {
     public static void main(String[] args) {
         // Starts the dice game
         // Plays each game with a delay between them
+        /*
+        *
+        try { // Pauses for the reroll
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        * */
         // Updates teh scoreboard
         // Shows the final tally
         // Congratulates the user if they won this round of games
         // Otherwise tells them better luck next time.
         // Saves the games as a binary file. for each individual game.
+
     }
 }
